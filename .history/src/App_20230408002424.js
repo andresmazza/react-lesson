@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
-import Expenses from './components/Expenses';
+import ExpenseItem from './components/ExpenseItem';
 function App() {
   const expenses = [
     {
@@ -24,25 +23,19 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
-
-
-  
-  let expensesList=[];
-  expenses.forEach((item)=>{
-    expensesList.push( <Expenses 
-      date ={item.date}
-      title ={item.title}
-      amount ={item.amount}
-      ></Expenses> )
-    
-  });
-
   return (
     <div>
       <h2>Let's get started!</h2>
-      <div className='expenses'>
-        {expensesList}
-      </div>
+      <ExpenseItem 
+        title ={expenses[0].title}
+        amount={expenses[0].amount}
+        date  ={expenses[0].date}
+        ></ExpenseItem>
+        <ExpenseItem 
+        title ={expenses[1].title}
+        amount={expenses[1].amount}
+        date  ={expenses[1].date}
+        ></ExpenseItem>
     </div>
   );
 }

@@ -28,21 +28,24 @@ function App() {
 
   
   let expensesList=[];
-  expenses.forEach((item)=>{
-    expensesList.push( <Expenses 
-      date ={item.date}
-      title ={item.title}
-      amount ={item.amount}
-      ></Expenses> )
-    
-  });
+  expenses.forEach((id,title,amount,date)=>{
+    itemList.push( <Expenses 
+      date ={date}
+      title ={title}
+      amount ={amount}
+      ></Expenses>)
+  })
 
   return (
     <div>
       <h2>Let's get started!</h2>
-      <div className='expenses'>
-        {expensesList}
-      </div>
+      expenses.map(function(e) {
+        <Expenses 
+        date ={e.date}
+        title ={e.title}
+        amount ={e.amount}
+        ></Expenses>
+      });
     </div>
   );
 }

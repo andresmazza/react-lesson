@@ -28,21 +28,18 @@ function App() {
 
   
   let expensesList=[];
-  expenses.forEach((item)=>{
+  expenses.forEach((id,title,amount,date)=>{
     expensesList.push( <Expenses 
-      date ={item.date}
-      title ={item.title}
-      amount ={item.amount}
-      ></Expenses> )
-    
+      date ={date}
+      title ={title}
+      amount ={amount}
+      ></Expenses>)
   });
 
   return (
     <div>
       <h2>Let's get started!</h2>
-      <div className='expenses'>
-        {expensesList}
-      </div>
+      
     </div>
   );
 }

@@ -34,15 +34,13 @@ function App() {
       title ={item.title}
       amount ={item.amount}
       ></Expenses> )
-    
+    //console.log(item.id)
   });
 
   return (
     <div>
       <h2>Let's get started!</h2>
-      <div className='expenses'>
-        {expensesList}
-      </div>
+      {expensesList}
     </div>
   );
 }
