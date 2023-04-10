@@ -1,8 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import Expenses from './components/Expenses/Expenses';
+import Card from './components/UI/Card';
+import NewExpense from './components/NewExpense/NewExpense';
 
-import Expenses from './components/Expenses';
-function App() {
+
+const App = () => {
   const expenses = [
     {
       id: 'e1',
@@ -39,10 +41,10 @@ function App() {
 
   return (
     <div>
-      <h2>Let's get started!</h2>
-      <div className='expenses'>
+      <NewExpense></NewExpense>
+      <Card className='expenses'>
         {expensesList}
-      </div>
+      </Card>
     </div>
   );
 }
