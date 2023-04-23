@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
 import ExpensesFilter from "./components/Expenses/ExpensesFilter";
@@ -5,6 +6,7 @@ import Card from "./components/UI/Card";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
+  const [year, setYear] = useState('2023');
   const expenses = [
     {
       id: "e1",
@@ -31,6 +33,11 @@ const App = () => {
     console.log("onSaveNewExpenseHandler", expense);
   };
 
+  const filterChangeYearHandler = (selectedYear) => {
+    setYear(selectedYear);
+    console.log('selectedYear:',selectedYear);
+  };
+
   let expensesList = [];
   expenses.forEach((item) => {
     expensesList.push(
@@ -47,7 +54,7 @@ const App = () => {
       <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
 
       <Card className="expenses">
-        <ExpensesFilter></ExpensesFilter>
+        <ExpensesFilter selected={year} onChangeFilter={filterChangeYearHandler}></ExpensesFilter>
         {expensesList}
       </Card>
     </div>
