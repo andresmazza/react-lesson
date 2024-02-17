@@ -1,4 +1,3 @@
-import ExpenseItem from '../Expenses/ExpenseItem'
 import './Card.css';
 
 const Card = (props) =>  { 

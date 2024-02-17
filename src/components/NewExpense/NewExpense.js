@@ -9,6 +9,7 @@ const getTimestampInSeconds = () => {
 
 const NewExpense = (props) => {
   const onSaveExpenseDatahandler = (enteredExpenseData) => {
+    console.log(enteredExpenseData);
     const expenseData = {
     id: getTimestampInSeconds(),
       ...enteredExpenseData,

@@ -8,7 +8,6 @@ const ExpensesFilter = (props) => {
   const changeYearHandler = (event) => {
     const year = event.target.value;
     setEnteredYear(year);
-    //console.log(year);
     props.onChangeFilter(year);
   };
 

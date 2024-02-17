@@ -6,7 +6,7 @@ const ExpenseForm = (props) => {
   const [userInput, setUserInput] = useState({
     title: "",
     amount: "",
-    date: "",
+    date: new Date(),
   });
 
   const getCurrentDate = () => {
@@ -29,12 +29,16 @@ const ExpenseForm = (props) => {
   };
 
   const dateChangeHandler = (event) => {
+    let enteredDate =  new Date( event.target.value);
+    console.log(enteredDate);
     setUserInput({
       ...userInput,
-      date:  new Date(event.target.value),
+      date: enteredDate,
     });
 
-    console.log(event.target.value);
+    console.log(userInput);
+
+    console.log('---------------->',event.target.value);
   };
 
   const submitHandler = (event) => {
@@ -46,7 +50,7 @@ const ExpenseForm = (props) => {
     setUserInput({
       title: '',
       amount: '',
-      date: ''
+      date: new Date()
     });
 
   };
@@ -79,7 +83,8 @@ const ExpenseForm = (props) => {
             min="2019-01-01"
             max={getCurrentDate()}
             onChange={dateChangeHandler}
-            value={userInput.date}
+            value={userInput.date.getFullYear().toString()}
+        
           />
         </div>
       </div>

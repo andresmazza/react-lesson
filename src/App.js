@@ -18,7 +18,6 @@ const App = () => {
 
   const filterChangeYearHandler = (selectedYear) => {
     setYear(selectedYear);
-    console.log("selectedYear:", selectedYear);
   };
 
   return (
