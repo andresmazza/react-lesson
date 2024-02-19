@@ -1,6 +1,7 @@
 import ExpensesList from "./ExpensesList";
 import Card from "../UI/Card";
 import "./Expenses.css";
+import ExpensesChart from "./ExpesesChart";
 
 
 const Expenses = (props) => {
@@ -15,9 +16,12 @@ const Expenses = (props) => {
   }
 
   return (
+    <>
+    <ExpensesChart expenses={items}></ExpensesChart>
     <Card className="expenses">
       <ExpensesList items={items}></ExpensesList>
     </Card>
+    </>
   );
 };
 

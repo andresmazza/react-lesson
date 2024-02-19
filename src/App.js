@@ -5,6 +5,8 @@ import ExpensesFilter from "./components/Expenses/ExpensesFilter";
 import Card from "./components/UI/Card";
 import NewExpense from "./components/NewExpense/NewExpense";
 import { expensesStorage } from "./ExpensesStorage";
+import Chart from "./components/Chart/Chart";
+import ExpensesChart from "./components/Expenses/ExpesesChart";
 
 const App = () => {
   const [year, setYear] = useState("");
@@ -23,12 +25,12 @@ const App = () => {
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
-
       <Card className="expenses">
         <ExpensesFilter
           selected={year}
           onChangeFilter={filterChangeYearHandler}
         ></ExpensesFilter>
+          
         <Expenses items={expenses} year={year} />
       </Card>
     </div>
