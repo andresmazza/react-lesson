@@ -24,6 +24,12 @@ const expensesStorage = [
       id: "e5",
       title: "Internet",
       amount: 45,
+      date: new Date(2023, 2, 1),
+    },
+    {
+      id: "e6",
+      title: "Internet 2",
+      amount: 100,
       date: new Date(2024, 2, 1),
     },
 
